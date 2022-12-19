@@ -2,6 +2,9 @@
 layout: default
 ---
 
+<script src="https://unpkg.com/js-image-zoom/js-image-zoom.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/js-image-zoom/js-image-zoom.min.js"></script>
+
 ![Famous Oscars 2014 Picture](https://img.theepochtimes.com/assets/uploads/2014/03/AP788938341654.jpg)
 
 ###### The famous selfie shared by Ellen DeGeneres with actors, front row from left, Jared Leto, Jennifer Lawrence, Meryl Streep, Ellen DeGeneres, Bradley Cooper, Peter Nyongo Jr. and, second row, from left, Channing Tatum, Julia Roberts, Kevin Spacey, Brad Pitt, Lupita Nyongo and Angelina Jolie during the Oscars 2014 (AP Photo/Ellen DeGeneres) (AP)
@@ -31,7 +34,19 @@ Now, lets build our graph to visualize what we talked about.
 
 We turned our attention to the Fruchterman-Reingold force-directed algorithm, which produces beautiful networks. Those graphs emphasis the position of the nodes, assuring as few edge crossings and distance disparities as possible. The algorithm works similarly to interaction between attractive and repelling forces. The edges between nodes are the springs which pull closer, and the nodes themselves are the object exercing push.
 
-![Initial network](/images/initial_network.jpg)
+<div class="full-width">
+    <div id="initial_network" style="width:50%; height:100%;">
+        <img src="/images/initial_network.jpg" />
+    </div>
+</div>
+
+<script>
+    var options = {
+        fillContainer: true,
+        zoomLensStyle: "border:1px solid black;",
+    };
+    new ImageZoom(document.getElementById("initial_network"), options);
+</script>
 
 # Clustering
 
@@ -39,7 +54,19 @@ We see some natural clusterings occur, so we run a clustering algorithm to under
 
 For simplify the graph, we only show the names of people who were in more than 24 movies.
 
-![Cluster Optics](/images/cluster_optics.jpg)
+<div class="full-width">
+    <div id="cluster_optics" style="width:50%; height:100%;">
+        <img src="/images/cluster_optics.jpg" />
+    </div>
+</div>
+
+<script>
+    var options = {
+        fillContainer: true,
+        zoomLensStyle: "border:1px solid black;",
+    };
+    new ImageZoom(document.getElementById("cluster_optics"), options);
+</script>
 
 Looking at the cluster graph, we observe 5 large clusters (differentiated by color) and some outliers. We are curious whether these clusters represent or resemble real clusters such as Hollywood, Bollywood and so on. The name of these movie industries come from where they are located. For example Hollywood is a neighbourhood in Los Angeles, California USA and Bollywood gets its name from its birthplace, Bombay (now Mumbai), India. Since movies are generally catered towards the local audience, the native languages are used. This also means that majority the actors, directors and writers are from that nationality or native speakers of the language.
 
