@@ -51,7 +51,7 @@ We turned our attention to the Fruchterman-Reingold force-directed algorithm, wh
 
 # Clustering
 
-We see some natural clusterings occur, so we run a clustering algorithm to understand why. We used OPTICS clustering algorithm, which has foundations from DBSCAN but allows rejecting clusters under a specific size. We rejected clusters under 400 people to focus on more generalizable clusters.
+We see some natural clusterings, so we run a clustering algorithm to understand why. We used OPTICS clustering algorithm, which has foundations from DBSCAN but allows rejecting clusters under a specific size. We rejected clusters under 400 people to focus on more generalizable clusters.
 
 To simplify the graph, we only show the names of people who were in more than 24 movies.
 
@@ -187,7 +187,7 @@ We define the key people as outliers who have many connections to clusters or ot
 
 # Conclusion
 
-We found many clusters with various sizes by running the OPTICS clustering algorithm, then we only kept the clusters with sizes larger than 400. When we looked at the common attributes of people in the same cluster, we saw that ethnicity value plays an important role. And we were able to map these clusters to real-life clusters. Some clusters had more people, and some had fewer due to the data we had. Merging the IMDb dataset with the CMU dataset allowed us to have more rich data. Since Freebase which CMU dataset was sourced from was built by volunteers, it had some biases towards the volunteers' preferences, nationality and so on.
+We used OPTICS clustering algorithm, a close relative to DBSCAN but allows rejecting clusters under a specific size which we chose as 400. When we looked at the common attributes of people in the same cluster, we saw that ethnicity value plays an important role. And we were able to map these clusters to real-life clusters. Some clusters had more people, and some had fewer due to the data we had. Merging the IMDb dataset with the CMU dataset allowed us to have more rich data. Since Freebase which CMU dataset was sourced from was built by volunteers, it had some biases towards the volunteers' preferences, nationality and so on.
 
 When we looked into the clusters, we saw that some clusters had more diverse ethnicities with non-negligible percentages. For example, Korean Cinema cluster was predominantly Korean (80%), whereas Hollwood had people from various ethnic backgrounds such as Jewish people and Italian Americans. Bollywood clusters also included many ethnic groups, which is not a surprise since India is very rich in ethnicities (74 listed in Wikipedia!).
 
@@ -199,9 +199,9 @@ More than half of the people were outliers, so it was worth analyzing them. Some
 
 # Further Details
 
-Our results could vary depending on the clustering algorithm used, and the parameters we set, such as cluster size cutoff. For example, Jackie Chan, a famous Chinese actor known mainly for his action movies globally, was placed in the Hollwood cluster. But he is at the very edge of the cluster (i.e. very close to being an outlier).
-
 The primary dataset which was sourced from Freebase had many attribute values missing which led us to make further assumptions, however by using IMDb dataset which is more reliable, our assumptions hold.
+
+Our results could vary depending on the clustering algorithm used, and the parameters we set, such as cluster size cutoff. For example, Jackie Chan, a famous Hong Kongese action comedy actor known globally, was placed in the Hollwood cluster. But he is at the very edge of the cluster (i.e. very close to being an outlier). He started his career in Hong Kong in 1962 when he was five years old. And he made his breakthrough in Hollywood in mid-1990s. He has played in 115 movies so far. He has been honored with The Hong Kong Star, in Hong Kong and a star on the Hollywood Walk of Fame. He is truly a key person in the movie industry.
 
 <img 
     style="display: block; 
