@@ -21,7 +21,7 @@ We analyzed the large social network by dividing it into clusters and then zoome
   - What are the common attributes of people in the same cluster?
   - Are there people without a cluster? What makes them unique?
 - As representation and diversity have more space in conversations today, do we observe the same awareness in the film industry?
-  - Do women are employed equally with men?
+  - Are women employed equally to men?
   - How diverse is each cluster?
 
 # The Data We Worked With
