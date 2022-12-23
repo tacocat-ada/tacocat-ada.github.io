@@ -11,7 +11,7 @@ _The famous selfie shared by Ellen DeGeneres with actors, front row from left, J
 
 Everyone has heard this quote or experienced it firsthand. It is no secret that social networks greatly impact career and personal life.
 
-Maybe the first industry that comes to mind is the movie industry. In this project, we analyzed the social network of people who work in the movie industry. We used the [CMU Movie Summary Corpus](https://www.cs.cmu.edu/~ark/personas/) and [IMDb](https://www.imdb.com/interfaces/) datasets to do our analysis.
+This claim also holds true in the movie industry, and maybe more than others. In this project, we analyzed the social network of people who work in the movie industry. We used the [CMU Movie Summary Corpus](https://www.cs.cmu.edu/~ark/personas/) and [IMDb](https://www.imdb.com/interfaces/) datasets to do our analysis.
 
 We analyzed the large social network by dividing it into clusters and then zoomed into the significant clusters to investigate further why these clusters exist and who are the key people that bridge different clusters. We looked at each cluster's common attributes and tied them into real movie industries.
 
@@ -65,11 +65,11 @@ To simplify the graph, we only show the names of people who were in more than 24
 
 Looking at the cluster graph, we observe five large clusters (differentiated by color) and some outliers. We are curious whether these clusters represent or resemble real clusters such as Hollywood, Bollywood, etc. The name of these movie industries comes from where they are located. For example, Hollywood is a neighborhood in Los Angeles, California, USA and Bollywood gets its name from its birthplace, Bombay (now Mumbai), India. Since movies generally cater to the local audience, native languages are used. This also means that the majority of the actors, directors and writers are from that nationality or native speakers of the language.
 
-From this analogy, we ethnicity data will reveal which movie industry they resemble. The ethnicity information comes from the CMU dataset and is available only for actors. But we can assume that the distribution of the people with ethnicities (although a small percentage) will be in line with the distribution if all entries had the feature.
+From this analogy, we can use the ethnicity to reveal which movie industry the clusters resemble. The ethnicity information comes from the CMU dataset and is available only for actors. But we can assume that the distribution of the people with ethnicities (although a small percentage) will be in line with the distribution if all entries had the feature.
 
 ## Diving into clusters
 
-Let's plot the ethnicity distribution of each cluster. We only considered non-NaN values for the plotting. Note that the results of the clusters heavily depend on the algorithm and the parameters we used.
+Let's plot the ethnicity distribution of each cluster. We only considered non-NaN values for the plotting and the plots show the five most occured ethnicities in each cluster. Note that the results of the clusters heavily depend on the algorithm and the parameters we used.
 
 ![Ethnicity in Clusters](/images/ethnicity_clusters.png)
 
@@ -91,7 +91,7 @@ Since we named the clusters, we can look further into some interesting statistic
 
 ## Popular Genres
 
-Depending on many factors such as culture and history, each audience enjoys different movies genres. We decided to plot the genre distribution of the IMDb dataset because CMU genres are more specific but less consistent due to the crowdsourcing nature of data. And IMDb genres are fewer (19 of them) but more consistent.
+Depending on many factors such as culture and history, each audience enjoys different movie genres. We decided to plot the genre distribution of the IMDb dataset because CMU genres are more specific but less consistent due to the crowdsourcing nature of data. And IMDb genres are fewer (19 of them) but more consistent.
 
 ![Genres in Clusters](/images/genre_clusters.png)
 
@@ -143,7 +143,7 @@ We see that connectivity is heavy-tailed. Additionally, outliers are less well-c
 
 As the connectivity distribution is heavy-tailed, we consider the top 1% most connected outliers for our subsequent analysis. Indeed, it makes sense that outliers are less connected on average than cluster members. Otherwise they would have formed a cluster with other outliers or joined another cluster. For this reason, the most connected outliers are what is interesting. They are the ones that might be, for example, bridges between clusters. Equally well connected to both, which leads them not to be assigned to either of them.
 
-But how well this 1% is connected to the others?
+But how well is this 1% connected to the others?
 
 ![Outlier Connectivity](images/outliers_top1__connnectivity.png)
 
@@ -199,7 +199,7 @@ More than half of the people were outliers, so it was worth analyzing them. Some
 
 # Further Details
 
-Our results could vary depending on the clustering algorithm used, and the parameters we set, such as cluster size cutoff. For example, Jackie Chan, a famous Chinese actor known mainly for his action movies globally, was placed in the Asian cluster. But he is at the very edge of the cluster (i.e. very close to being an outlier).
+Our results could vary depending on the clustering algorithm used, and the parameters we set, such as cluster size cutoff. For example, Jackie Chan, a famous Chinese actor known mainly for his action movies globally, was placed in the Hollwood cluster. But he is at the very edge of the cluster (i.e. very close to being an outlier).
 
 The primary dataset which was sourced from Freebase had many attribute values missing which led us to make further assumptions, however by using IMDb dataset which is more reliable, our assumptions hold.
 
